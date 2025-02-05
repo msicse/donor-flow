@@ -12,10 +12,12 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PaymentController;
 
 Route::get('/', function () {
-    return view('layouts.backend.app');
+    return view('login');
 });
 
-Auth::routes();
+// Auth::routes();
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/users', UserController::class);
