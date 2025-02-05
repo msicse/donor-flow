@@ -27,50 +27,50 @@
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
           <div class="sidebar-content">
             <ul class="nav nav-secondary">
-              <li class="nav-item active">
-                <a href="#dashboard">
+              <li class="nav-item {{ request()->is('dashboard') ? 'active' : '' }}">
+                <a href="{{ route('dashboard') }}">
                   <i class="fas fa-home"></i>
                   <p>Dashboard</p>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item {{ request()->is('users*') ? 'active' : '' }}">
                 <a href="{{ route('users.index') }}">
                   <i class="fas fa-users"></i>
                   <p>Users</p>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item {{ request()->is('brands*') ? 'active' : '' }}">
                 <a href="{{ route('brands.index') }}">
                   <i class="fas fa-object-group"></i>
                   <p>Brands</p>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item {{ request()->is('employees*') ? 'active' : '' }}">
                 <a href="{{ route('employees.index') }}">
                   <i class="fas fa-people-carry"></i>
                   <p>Employees(RPO)</p>
                 </a>
               </li>
 
-              <li class="nav-item active">
+              <li class="nav-item {{ request()->is('factories*') ? 'active' : '' }}">
                 <a href="{{ route('factories.index') }}">
                   <i class="fas  fa-industry"></i>
                   <p>Factories</p>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item {{ request()->is('contributions') ? 'active' : '' }}">
                 <a href="{{ route('contributions.index') }}">
                   <i class="fas fa-donate"></i>
                   <p>Contributions</p>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item {{ request()->is('payments*') ? 'active' : '' }}">
                 <a href="{{ route('payments.index') }}">
                   <i class="fas fa-file-invoice-dollar"></i>
                   <p>Payments</p>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item {{ request()->is('seetings*') ? 'active' : '' }}">
                 <a href="{{ route('settings.index') }}">
                   <i class="fas fa-cog"></i>
                   <p>Settings</p>

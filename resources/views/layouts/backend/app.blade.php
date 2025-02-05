@@ -21,11 +21,22 @@
             @include('layouts.backend.partials.footer')
         </div>
 
+        <form method="POST" id="logoutForm" action="{{ route('logout') }}">
+          @csrf
+        </form>
+
     </div>
     <!--   Core JS Files   -->
     <script src="{{ asset('backend/assets/js/core/jquery-3.7.1.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('backend/assets/js/core/bootstrap.min.js') }}"></script>
+    <script>
+
+      $("#logout").on('click', function(e){
+        e.preventDefault();
+        document.getElementById('logoutForm').submit();
+      });
+    </script>
     @stack('js')
   </body>
 </html>
