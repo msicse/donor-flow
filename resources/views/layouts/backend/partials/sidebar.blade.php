@@ -33,6 +33,12 @@
                   <p>Dashboard</p>
                 </a>
               </li>
+              <li class="nav-item {{ request()->is('roles*') ? 'active' : '' }}">
+                <a href="{{ route('roles.index') }}">
+                  <i class="fas fa-users"></i>
+                  <p>Roles</p>
+                </a>
+              </li>
               <li class="nav-item {{ request()->is('users*') ? 'active' : '' }}">
                 <a href="{{ route('users.index') }}">
                   <i class="fas fa-users"></i>

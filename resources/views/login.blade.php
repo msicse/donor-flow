@@ -4,7 +4,7 @@
 
   <body class="bg-light">
     <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+        <div class="card shadow-lg p-4" style="width: 100%; max-width: 600px;">
             <!-- Logo and Application Name -->
             <div class="text-center mb-4">
                 <img src="{{ asset('images/rsc.png') }}" alt="Company Logo" class="img-fluid mb-3" style="width: 200px;">
@@ -41,7 +41,7 @@
             </form>
             <!-- Footer Links -->
             <div class="text-center mt-3">
-                <p class="text-muted"><a href="#" class="text-primary">Forgot password?</a></p>
+                <p class="text-muted"><a href="{{ route('password.request') }}" class="text-primary">Forgot password?</a></p>
             </div>
         </div>
     </div>

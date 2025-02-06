@@ -1,13 +1,21 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+    @include('layouts.backend.partials.head')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
+  <body class="bg-light">
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="card shadow-lg p-4" style="width: 100%; max-width: 600px;">
+                <!-- Logo and Application Name -->
+                <div class="text-center mb-4">
+                    <img src="{{ asset('images/rsc.png') }}" alt="Company Logo" class="img-fluid mb-3" style="width: 200px;">
+                    <h2 class="fw-bold">Contribution Collection App</h4>
+                </div>
                 <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <form method="POST" action="{{ route('password.update') }}">
                         @csrf
 
@@ -51,6 +59,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
+                                <a href="/" class="btn btn-danger">Cancel</a>
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Reset Password') }}
                                 </button>
@@ -60,6 +69,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endsection
+    </body>
+</html>

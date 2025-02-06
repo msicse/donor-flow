@@ -12,6 +12,7 @@ use App\Http\Controllers\FactoryController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\RoleController;
 
 Route::get('/', function () {
     return view('login');
@@ -22,11 +23,12 @@ Route::get('/', function () {
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Auth::routes();
+Auth::routes();
 
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('/roles', RoleController::class);
     Route::resource('/users', UserController::class);
     Route::resource('/brands', BrandController::class);
     Route::resource('/employees', EmployeeController::class);
