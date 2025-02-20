@@ -28,7 +28,15 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('/roles', RoleController::class);
+
+    Route::get('/roles', [RoleController::class, 'index'])->name('roles.index');
+    Route::get('/roles/form', [RoleController::class, 'create'])->name('roles.create');
+    Route::get('/roles/edit/{id}', [RoleController::class, 'create'])->name('roles.edit');
+    Route::post('/roles/store', [RoleController::class, 'store'])->name('roles.store');
+    Route::put('/roles/update/{id}', [RoleController::class, 'update'])->name('roles.update');
+    Route::delete('/roles/delete/{id}', [RoleController::class, 'destroy'])->name('roles.delete');
+
+
     Route::resource('/users', UserController::class);
     Route::resource('/brands', BrandController::class);
     Route::resource('/employees', EmployeeController::class);

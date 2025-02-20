@@ -3,7 +3,7 @@
             <div class="logo-header" data-background-color="dark">
               <a href="index.html" class="logo">
                 <img
-                  src="{{ asset('backend/assets/img/kaiadmin/logo_light.svg') }}"
+                  src="{{ asset('backend/assets/img/donor_icon.png') }}"
                   alt="navbar brand"
                   class="navbar-brand"
                   height="20"
@@ -82,7 +82,7 @@
                   >
                     <div class="avatar-sm">
                       <img
-                        src="{{ asset('backend/assets/img/profile.jpg') }}"
+                        src="{{ asset('backend/assets/img/donor_icon.png') }}"
                         alt="..."
                         class="avatar-img rounded-circle"
                       />
@@ -98,7 +98,7 @@
                         <div class="user-box">
                           <div class="avatar-lg">
                             <img
-                              src="{{ asset('backend/assets/img/profile.jpg') }}"
+                              src="{{ asset('backend/assets/img/donor_icon.png') }}"
                               alt="image profile"
                               class="avatar-img rounded"
                             />
